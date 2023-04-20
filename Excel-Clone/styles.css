@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding: 0;
+}
+table{
+    border-collapse: collapse;
+}
+
+th{
+    background-color: #dfdada;
+}
+td{
+    border: 1px solid #d2d0d0;
+    padding: .25rem 2rem;
+    overflow-x: auto;
+}
+th{
+    border: 1px solid #b4b0b0;
+    padding: .25rem 2rem;
+}
+td:focus,tr:focus,tbody:focus{
+    outline:none;
+}
+
+#current-cell{
+    color:white;
+    background-color: #888585;
+}
+.fixed-position-top{
+    position:sticky;
+    top:0;
+    z-index: 999;
+}

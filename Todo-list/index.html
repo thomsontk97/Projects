@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="header">
+      <button id="add-modal">Add Task</button>
+    </div>
+    <!-- Modal -->
+    <div class="modal-container">
+      <div id="modal">
+        <!--  -->
+        <div class="modal-item">
+          <label for="task-name">Task Name:</label>
+          <input type="text" id="task-name" class="inputs" required />
+        </div>
+
+        <!--  -->
+        <div class="modal-item">
+          <label for="priority">Priority</label>
+          <select id="priority" class="inputs" required>
+            <option value="Low" id="low-opt">Low</option>
+            <option value="Medium" id="med-opt">Medium</option>
+            <option value="High" id="high-opt">High</option>
+          </select>
+        </div>
+
+        <!--  -->
+        <div class="modal-item">
+          <label for="due-date">Due Date:</label>
+          <input type="date" id="due-date" class="inputs" required />
+        </div>
+
+        <!--  -->
+        <div class="modal-item">
+          <label for="status">Status</label>
+          <select id="status" class="inputs" required>
+            <option value="Not-Yet-Started">Not Yet Started</option>
+            <option value="In-Progress">In-Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+        <!--  -->
+
+        <div class="modal-item">
+          <button type="submit" id="add-task">Add Task</button>
+        </div>
+      </div>
+    </div>
+    <!-- Tasks -->
+    <div class="task-body">
+      <div class="task-boxes" id="not-yet-started">
+        <h2>Not Yet Started</h2>
+      </div>
+      <div class="task-boxes" id="in-progress">
+        <h2>In Progress</h2>
+      </div>
+      <div class="task-boxes" id="completed">
+        <h2>Completed</h2>
+      </div>
+    </div>
+    <!-- Script SRC -->
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+
+*{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f3f3;
+    width:100vw;
+    height:100vh;
+
+}
+
+#username-container{
+
+    /* border:1px solid black; */
+    padding: 1rem;
+    background-color: #fff;
+
+    width:100vw;
+    max-width: 400px;
+
+    display: flex;
+    flex-flow: column wrap;
+
+    padding: 1.5rem;
+    border-radius: 10px;
+
+    box-shadow: 5px 10px 15px #5e5d5d;
+
+    /* display: none; */
+}
+
+#join-h1{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.underline{
+    width:55%;
+    height:.15rem;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+#username-container p {
+    padding: 1rem 0 .2rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+#join-form{
+    padding: .25rem;
+}
+
+#username-input{
+    width:90%;
+    padding: .5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    border:.5px solid #000;
+    border-radius: 6px;
+    
+}
+#username-input:focus{
+    outline:none;
+}
+
+#btn-input{
+    margin-top: 10px;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #000;
+    color:white;
+    border: 0;
+    cursor: pointer;
+
+}
+
+#chatroom-container{
+    background-color: #fff;
+    height:90vh;
+    width:60vw;
+
+    border-radius: 10px;
+    display: none;
+
+
+}
+
+#chat-head{
+    background-color: #000;
+    padding: 1rem;
+    color: #fff;
+    font-size:1.5rem;
+    border-radius: 10px;
+}
+
+#messages{
+    display: flex;
+    flex-flow: column;
+    height:80%;
+    /* border:1px solid red; */
+
+    overflow-y: auto;
+}
+
+.message{
+    padding: .1rem .5rem .5rem .5rem ;
+    background-color: #e1e1e1;
+    margin: .5rem;
+    width:fit-content;
+}
+
+.sent{
+    align-self: flex-end;
+    border-radius: 10px 0 10px 10px;
+    background-color: dodgerblue;
+    color: #fff;
+}
+
+.received{
+    align-self: flex-start;
+    border-radius: 0px 10px 10px 10px;
+}
+
+#msg-inpt-text{
+    width: 85%;
+    height:1rem;
+    border:none;
+    background-color: #e1e1e1;
+    border-radius:50px;
+    margin-left: 10px;
+    padding: .8rem;
+    font-size: 1rem;
+}
+#msg-inpt-text:focus{
+    outline: none;
+}
+#msg-inpt-btn{
+    padding: .4rem 1rem .4rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: #000;
+    color:white;
+    border: 0;
+    cursor: pointer;
+    border-radius: 60px;
+    margin-left: 10px;
+    position:relative;
+    /* top:5px; */
+}
+
+#you,#other{
+    font-size: .75rem;
+    display: inline-block;
+}
+#other{
+    color:#615d5d;
+}

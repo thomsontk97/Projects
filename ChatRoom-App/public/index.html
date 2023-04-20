@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatRoom App</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="username-container">
+      <div id="join-h1">Join ChatRoom</div>
+      <div class="underline"></div>
+      <p>Username:</p>
+      <form id="join-form">
+        <input
+          type="text"
+          id="username-input"
+          required
+          placeholder="Username"
+        />
+        <br />
+        <button id="btn-input">Join Chat</button>
+      </form>
+    </div>
+    <!-- Chatroom -->
+    <div id="chatroom-container">
+      <div id="chat-head">Chatroom</div>
+      <div id="messages"></div>
+
+      <input type="text" id="msg-inpt-text" placeholder="Enter Message..." />
+      <button id="msg-inpt-btn">
+        Send
+        <!-- <span class="material-icons">send</span> -->
+      </button>
+    </div>
+    <script src="./script.js" async defer></script>
+    <script src="/socket.io/socket.io.js"></script>
+  </body>
+</html>

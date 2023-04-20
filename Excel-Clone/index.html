@@ -6,13 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Excel Clone</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="fixed-position-top">gffdgdfg</div>
+    <div id="edit">
+      <button id="cut-btn" class="ccp">
+        <span class="material-icons icons">content_cut</span>
+      </button>
+      <button id="copy-btn" class="ccp">
+        <span class="material-icons icons">content_copy</span>
+      </button>
+      <button id="paste-btn" class="ccp">
+        <span class="material-icons icons">content_paste</span>
+      </button>
+
+      <select id="font-family">
+        <option value="serif">Serif</option>
+        <option value="sans-serif">Sans-Serif</option>
+        <option value="cursive">Cursive</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="monospace">Monospace</option>
+      </select>
+
+      <select id="font-size">
+        <option value="14px">14</option>
+        <option value="16px">16</option>
+        <option value="18px">18</option>
+        <option value="20px">20</option>
+        <option value="22px">22</option>
+      </select>
+
+      <button id="bold-btn" class="ccp biu">
+        <span class="material-icons">format_bold</span>
+      </button>
+      <button id="italics-btn" class="ccp biu">
+        <span class="material-icons">format_italic</span>
+      </button>
+      <button id="underline-btn" class="ccp biu">
+        <span class="material-icons">format_underline</span>
+      </button>
+
+      <button id="left-align" class="ccp">
+        <span class="material-icons">format_align_left</span>
+      </button>
+      <button id="center-align" class="ccp">
+        <span class="material-icons">format_align_center</span>
+      </button>
+      <button id="right-align" class="ccp">
+        <span class="material-icons">format_align_right</span>
+      </button>
+
+      <label for="text-color">
+        <span class="material-icons txt">text_format</span>
+      </label>
+      <input type="color" id="text-color" />
+      <label for="bg-color">
+        <span class="material-icons txt2">format_color_fill</span>
+      </label>
+      <input type="color" id="bg-color" />
+      <br />
+      <div id="current-cell"></div>
+    </div>
     <table id="myTable">
       <thead class="fixed-position-top">
         <tr id="table-head-row">
-          <th id="current-cell"></th>
+          <th id="corner-cell"></th>
         </tr>
       </thead>
       <tbody id="table-body" class="fixed-position-side"></tbody>

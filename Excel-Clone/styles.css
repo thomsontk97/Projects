@@ -2,6 +2,9 @@
     margin:0;
     padding: 0;
 }
+body{
+    background-color: #dfdada;
+}
 table{
     border-collapse: collapse;
 }
@@ -11,8 +14,12 @@ th{
 }
 td{
     border: 1px solid #d2d0d0;
-    padding: .25rem 2rem;
-    overflow-x: auto;
+    padding: .25rem .1rem;
+    width:100%;
+    text-align: center;
+    /* overflow-x: auto; */
+    background-color:#f7f5f5;
+    font-size: 14px;
 }
 th{
     border: 1px solid #b4b0b0;
@@ -22,12 +29,98 @@ td:focus,tr:focus,tbody:focus{
     outline:none;
 }
 
-#current-cell{
-    color:white;
+#corner-cell{
     background-color: #888585;
 }
 .fixed-position-top{
     position:sticky;
+    top:4.7rem;
+    z-index: 999;
+}
+button{
+    padding: .25rem .5rem;
+    cursor: pointer;
+    margin: .5rem;
+}
+
+#edit{
+    height:4.8rem;
+    width:100vw;
+    position:sticky;
     top:0;
     z-index: 999;
+
+    /* background-color:  #9fa5a2 ; */
+    background-color: #dfdada;
+
+    
+}
+
+#current-cell{
+    margin:0 .5rem .5rem .5rem;
+    width:4rem;
+    height:1.2rem;
+    background-color: white;
+    color:#777373;
+    text-align: center;
+}
+
+.icons{
+    /* font-size: 18px !important; */
+    
+}
+.ccp{
+    background-color: #dfdada ;
+    border:none;
+    margin-right: 0;
+    padding: 2px;
+    position:relative;
+    top:8px;
+    border-radius: 5px;
+    
+}
+
+.ccp:hover{
+    background-color: #c5cac8;
+}
+
+#font-size,#font-family{
+    border:none;
+    padding: .15rem;
+    border-radius: 2px;
+}
+#font-family{
+    margin-left: 5px;
+}
+#font-size:focus,#font-family:focus{
+    outline: none;
+}
+option{
+    outline: none;
+    border:none;
+}
+label{
+    cursor: pointer;
+    
+}
+.txt{
+    font-size:2rem !important;
+    position: relative;
+    top:12px;
+    border-radius:5px;
+}
+.txt2{
+    font-size:1.5rem !important;
+    position: relative;
+    top:5px;
+    padding: 2px;
+    border-radius:5px;
+}
+#text-color,#bg-color{
+    position:absolute;
+    width:0;
+    height:0;
+}
+.txt:hover,.txt2:hover{
+    background-color: #c5cac8;
 }

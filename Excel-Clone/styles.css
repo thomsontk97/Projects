@@ -25,7 +25,7 @@ th{
     border: 1px solid #b4b0b0;
     padding: .25rem 2rem;
 }
-td:focus,tr:focus,tbody:focus{
+tr:focus,tbody:focus{
     outline:none;
 }
 
@@ -75,7 +75,7 @@ button{
     margin-right: 0;
     padding: 2px;
     position:relative;
-    top:8px;
+    top:7px;
     border-radius: 5px;
     
 }
@@ -123,4 +123,24 @@ label{
 }
 .txt:hover,.txt2:hover{
     background-color: #c5cac8;
+}
+
+#fx{
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    position: relative;
+    bottom:3px;
+}
+
+#func{
+    width:90%;
+    background-color: white;
+    height:1.2rem;
+    margin-left: 5px;
+}
+.fnc{
+    display: flex;
+    /* justify-content: space-evenly; */
 }

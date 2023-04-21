@@ -87,11 +87,11 @@ underlineBtn.addEventListener('click',() => {
     }
 })
 
-textColor.addEventListener("change", () => {
+textColor.addEventListener("input", () => {
     currCell.style.color = textColor.value;
 })
 
-bgColor.addEventListener("change", () => {
+bgColor.addEventListener("input", () => {
     currCell.style.backgroundColor = bgColor.value;
 })
 

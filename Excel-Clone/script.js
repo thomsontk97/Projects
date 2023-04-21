@@ -21,11 +21,21 @@ const copyBtn = document.getElementById('copy-btn');
 const pasteBtn = document.getElementById('paste-btn');
 
 var cutVal = {};
-
-
 const columns = 26;
 const rows = 100;
 let currCell;
+
+const matrix = new Array(rows);
+
+for(var i=0; i<rows; i++) {
+    matrix[i] = new Array(columns);
+    for(var j=0; j<columns; j++) {
+        matrix[i][j] = {};
+    }
+}
+
+
+
 
 for(var i=0; i<columns; i++){
     let th = document.createElement('th');
@@ -33,11 +43,11 @@ for(var i=0; i<columns; i++){
     thead.appendChild(th);
     
 }
-for(var i=1; i<=rows; i++){
+for(var i=0; i<rows; i++){
     let tr = document.createElement('tr');
     let th = document.createElement('th');
     th.setAttribute('id','fixed-position');
-    th.innerText = i;
+    th.innerText = i+1;
 
     tr.appendChild(th);
 
@@ -45,7 +55,7 @@ for(var i=1; i<=rows; i++){
         let td = document.createElement('td');
         td.setAttribute('contenteditable',"true");
         td.setAttribute('spellcheck',"false");
-        td.setAttribute('id',`${String.fromCharCode(j+65)}${i}`);
+        td.setAttribute('id',`${String.fromCharCode(j+65)}${i+1}`);
         td.addEventListener('focus',(ev) => onFocus(ev))
         tr.appendChild(td);
     }
@@ -58,6 +68,8 @@ function onFocus(ev){
     currCell = ev.target;
      document.getElementById('current-cell').innerText = ev.target.id;
 
+    //  console.log(matrix);
+
 }
 
 boldBtn.addEventListener('click',() => {
@@ -67,6 +79,7 @@ boldBtn.addEventListener('click',() => {
     }else{
         currCell.style.fontWeight = "normal";
     }
+    updateJson(currCell);
 })
 
 italicsBtn.addEventListener('click',() => {
@@ -76,6 +89,7 @@ italicsBtn.addEventListener('click',() => {
     }else{
         currCell.style.fontStyle = "normal";
     }
+    updateJson(currCell);
 })
 
 underlineBtn.addEventListener('click',() => {
@@ -85,34 +99,42 @@ underlineBtn.addEventListener('click',() => {
     }else{
         currCell.style.textDecoration = "none";
     }
+    updateJson(currCell);
 })
 
 textColor.addEventListener("input", () => {
     currCell.style.color = textColor.value;
+    updateJson(currCell);
 })
 
 bgColor.addEventListener("input", () => {
     currCell.style.backgroundColor = bgColor.value;
+    updateJson(currCell);
 })
 
 leftAlign.addEventListener('click', () => {
     currCell.style.textAlign = "left";
+    updateJson(currCell);
 })
 
 rightAlign.addEventListener('click', () => {
     currCell.style.textAlign = "right";
+    updateJson(currCell);
 })
 
 centerAlign.addEventListener('click', () => {
     currCell.style.textAlign = "center";
+    updateJson(currCell);
 })
 
 fontSize.addEventListener('change', () => {
     currCell.style.fontSize = fontSize.value;
+    updateJson(currCell);
 })
 
 fontFamily.addEventListener('change', () => {
     currCell.style.fontFamily = fontFamily.value;
+    updateJson(currCell);
 })
 
 cutBtn.addEventListener('click', () => {
@@ -122,11 +144,13 @@ cutBtn.addEventListener('click', () => {
     } 
     currCell.innerText = null;
     currCell.style.cssText = null;
+    updateJson(currCell);
 })
 
 pasteBtn.addEventListener('click', () => {
     currCell.innerText = cutVal.text;
     currCell.style.cssText = cutVal.css;
+    updateJson(currCell);
 })
 
 copyBtn.addEventListener('click', () => {
@@ -134,5 +158,77 @@ copyBtn.addEventListener('click', () => {
         text:currCell.innerText,
         css : currCell.style.cssText
     } 
+    updateJson(currCell);
 
 })
+
+function updateJson(cell){
+    var json = {
+        id : cell.id,
+        text : cell.innerText,
+        style : cell.style.cssText
+    };
+
+    var id = cell.id.split(""); //Spliting cell id into two eg: A1 => ['A','1'];
+    var i = id[1] -1;
+    var j = id[0].charCodeAt(0) - 65;
+    matrix[i][j] = json;
+};
+
+function downloadJson() {
+    // Define your JSON data
+  
+    // Convert JSON data to a string
+    const jsonString = JSON.stringify(matrix);
+  
+    // Create a Blob with the JSON data and set its MIME type to application/json
+    const blob = new Blob([jsonString], { type: "application/json" });
+  
+    // Create an anchor element and set its href attribute to the Blob URL
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "data.json"; // Set the desired file name
+  
+    // Append the link to the document, click it to start the download, and remove it afterward
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+//upload
+
+document.getElementById("jsonFile").addEventListener("change", readJsonFile);
+
+function readJsonFile(event) {
+  const file = event.target.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      const fileContent = e.target.result;
+
+      // {id,style,text}
+      // Parse the JSON file content and process the data
+      try{
+        const jsonData = JSON.parse(fileContent);
+        console.log("matrix2", jsonData);
+        matrix = jsonData;
+        jsonData.forEach((row) => {
+          row.forEach((cell) => {
+            if (cell.id) {
+              var myCell = document.getElementById(cell.id);
+              myCell.innerText = cell.text;
+              myCell.style.cssText = cell.style;
+            }
+          });
+        });
+        // Process the JSON data as needed
+      }catch (error) {
+        console.error("Error parsing JSON file:", error);
+      }
+    };
+
+    reader.readAsText(file);
+  }
+}

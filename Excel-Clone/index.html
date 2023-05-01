@@ -14,16 +14,16 @@
   <body>
     <div id="edit">
       <button id="cut-btn" class="ccp">
-        <span class="material-icons icons">content_cut</span>
+        <span class="material-icons icons" title="Cut">content_cut</span>
       </button>
       <button id="copy-btn" class="ccp">
-        <span class="material-icons icons">content_copy</span>
+        <span class="material-icons icons" title="Copy">content_copy</span>
       </button>
       <button id="paste-btn" class="ccp">
-        <span class="material-icons icons">content_paste</span>
+        <span class="material-icons icons" title="Paste">content_paste</span>
       </button>
 
-      <select id="font-family">
+      <select id="font-family" title="Font Family">
         <option value="serif">Serif</option>
         <option value="sans-serif">Sans-Serif</option>
         <option value="cursive">Cursive</option>
@@ -31,7 +31,7 @@
         <option value="monospace">Monospace</option>
       </select>
 
-      <select id="font-size">
+      <select id="font-size" title="Font Size">
         <option value="14px">14</option>
         <option value="16px">16</option>
         <option value="18px">18</option>
@@ -40,34 +40,47 @@
       </select>
 
       <button id="bold-btn" class="ccp biu">
-        <span class="material-icons">format_bold</span>
+        <span class="material-icons" title="Bold">format_bold</span>
       </button>
       <button id="italics-btn" class="ccp biu">
-        <span class="material-icons">format_italic</span>
+        <span class="material-icons" title="Italics">format_italic</span>
       </button>
       <button id="underline-btn" class="ccp biu">
-        <span class="material-icons">format_underline</span>
+        <span class="material-icons" title="Underline">format_underline</span>
       </button>
 
       <button id="left-align" class="ccp">
-        <span class="material-icons">format_align_left</span>
+        <span class="material-icons" title="Align Left">format_align_left</span>
       </button>
       <button id="center-align" class="ccp">
-        <span class="material-icons">format_align_center</span>
+        <span class="material-icons" title="Align Center"
+          >format_align_center</span
+        >
       </button>
       <button id="right-align" class="ccp">
-        <span class="material-icons">format_align_right</span>
+        <span class="material-icons" title="Align Right"
+          >format_align_right</span
+        >
       </button>
 
       <label for="text-color">
-        <span class="material-icons txt">text_format</span>
+        <span class="material-icons txt" title="Text Color">text_format</span>
       </label>
       <input type="color" id="text-color" />
       <label for="bg-color">
-        <span class="material-icons txt2">format_color_fill</span>
+        <span class="material-icons txt2" title="Cell Background Color"
+          >format_color_fill</span
+        >
       </label>
       <input type="color" id="bg-color" />
-      <button onclick="downloadJson()">Download</button>
+      <button onclick="downloadJson()" class="ccp" title="Dowload">
+        <span class="material-icons">download</span>
+      </button>
+      <label for="jsonFile">
+        <span class="material-icons" id="upload" title="Upload"
+          >upload_file</span
+        >
+      </label>
       <input type="file" id="jsonFile" accept=".json" />
       <br />
       <div class="fnc">

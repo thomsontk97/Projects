@@ -1,0 +1,99 @@
+*{
+    margin:0;
+    font-family: 'Inter', sans-serif;
+}
+
+h2{
+    align-self: center;
+    margin-left: 1rem;
+}
+
+.header{
+    width:100%;
+    height: 75px;
+    background-color: #333;
+    color:#fff;
+    font-size: 24px;
+    display: flex;
+}
+
+#card-container{
+    display:flex;
+    flex-flow: row wrap;
+}
+.card{
+    border:1px solid #b3aeae;
+    margin:1rem;
+    padding:1rem;
+    border-radius:5px;
+
+    width:28vw;
+    position: relative;
+
+    cursor: pointer;
+}
+
+.card:hover{
+    border:1px solid #000;
+}
+
+
+.status{
+    font-size: 1.5rem;
+}
+
+.caseNumber{
+    font-size: .75rem;
+    color:#6e6b6b;
+}
+
+.date{
+    
+    position: absolute;
+    top:1.5em;
+    right:1rem;
+}
+
+.approved,.pending,.completed,.cancelled{
+    padding: .5rem;
+    border-radius:5px;
+    width:100px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.approved{
+    background-color: rgb(56, 209, 209);
+}
+.pending{
+    background-color: rgb(241, 241, 14);
+}
+
+.completed{
+    background-color: rgb(4, 151, 4);
+}
+.cancelled{
+    background-color: rgb(232, 23, 23);
+}
+
+.caseNumber{
+    padding-bottom:1rem;
+}
+
+.fromLocation{
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem 0;
+}
+
+.toLocation{
+    text-align: left;
+    padding: 1rem 2rem 2rem 0;
+    color:#696868;
+}
+
+.fare{
+    float: right;
+    font-weight:700 ;
+}

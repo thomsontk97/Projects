@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NavBar -->
+    <div id="nav">
+      <div id="title">MeShop</div>
+      <div id="links">
+        <div id="home" class="link-items">Home</div>
+        <div id="sign-up" class="link-items">Signup</div>
+        <div id="log-in" class="link-items">Login</div>
+        <div id="cart" class="link-items">My Cart</div>
+      </div>
+    </div>
+    <!-- Signup Form -->
+    <div class="form-head">Signup</div>
+    <form id="signup-form" class="forms">
+      <input type="text" id="first-name" placeholder="First Name" />
+      <input type="text" id="last-name" placeholder="Last Name" />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="pass" placeholder="Password" />
+      <input type="password" id="pass-cnfrm" placeholder="Confirm Password" />
+      <button id="btn-signup" class="buttons">Signup</button>
+    </form>
+    <!-- Script -->
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -10,6 +10,8 @@
 body {
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
+
+  position: relative;
 }
 a {
   color: white;
@@ -46,6 +48,14 @@ nav {
   border-bottom: 1px solid white;
   padding: 1rem;
   font-size: 1rem;
+
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:999;
+
+
 }
 
 nav .brand {
@@ -70,6 +80,7 @@ main aside {
   position: fixed;
   padding-top: 1rem;
   width: 11rem;
+  font-size: .9rem;
 }
 
 main main-content {
@@ -190,3 +201,4 @@ main-content .items .item .circle {
   border-radius: 100%;
   margin: 0 5px;
 }
+

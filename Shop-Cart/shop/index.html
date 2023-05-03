@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MeShop.</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles2.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -85,12 +86,12 @@
             list="values"
           />
           <datalist id="values">
-            <option value="0" label="0"></option>
-            <option value="1"></option>
-            <option value="2"></option>
-            <option value="3"></option>
-            <option value="4"></option>
-            <option value="5" label="5"></option>
+            <option value="0" label="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5" label="5">5</option>
           </datalist>
         </section>
         <section>
@@ -98,40 +99,46 @@
           <ul>
             <li>
               <input id="0-25" type="checkbox" name="prange" />
-              <label for="0-25">$0 to $25</label>
+              <label for="0-25">₹0 to ₹25</label>
             </li>
             <li>
               <input id="25-50" type="checkbox" name="prange" />
-              <label for="25-50">$25 to $50</label>
+              <label for="25-50">₹25 to ₹50</label>
             </li>
             <li>
               <input id="50-100" type="checkbox" name="prange" />
-              <label for="50-100">$50 to $100</label>
+              <label for="50-100">₹50 to ₹100</label>
             </li>
             <li>
               <input id="100on" type="checkbox" name="prange" />
-              <label for="100on">$100 onwards</label>
+              <label for="100on">₹100 onwards</label>
             </li>
           </ul>
         </section>
       </aside>
       <main-content>
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" id="search" />
         <div class="filters">
-          <div class="filter active">All</div>
-          <div class="filter">Mens</div>
-          <div class="filter">Womens</div>
-          <div class="filter">Jewellery</div>
-          <div class="filter">Electronics</div>
+          <div class="filter active" id="all">All</div>
+          <div class="filter" id="mens">Mens</div>
+          <div class="filter" id="womens">Womens</div>
+          <div class="filter" id="jewellery">Jewellery</div>
+          <div class="filter" id="electronics">Electronics</div>
         </div>
-        <section>
+
+        <div id="main-items">
+          <div id="loader-container">
+            <div class="loader"></div>
+          </div>
+        </div>
+        <!-- <section>
           <title>Men's Clothing</title>
           <div class="items">
             <div class="item">
               <img src="tshirt.png" alt="Item" />
               <div class="info">
                 <div class="row">
-                  <div class="price">$100</div>
+                  <div class="price">₹100</div>
                   <div class="sized">S,M,L</div>
                 </div>
                 <div class="colors">
@@ -324,7 +331,7 @@
               <button id="addBtn">Add to Cart</button>
             </div>
           </div>
-        </section>
+        </section> -->
       </main-content>
     </main>
     <script src="./script.js"></script>

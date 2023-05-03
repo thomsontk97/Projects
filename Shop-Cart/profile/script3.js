@@ -35,6 +35,8 @@ function editProfile(ev) {
 
   //   usersArr.push(editObj);
 
+  alert("Profile Updated");
+
   //   localStorage.removeItem("Users");
   localStorage.setItem("Users", JSON.stringify(usersArr));
   localStorage.setItem("CurrentUser", JSON.stringify(currUser));
@@ -76,6 +78,8 @@ function editPassword(ev) {
       }
     });
 
+    alert("Password Updated");
+
     localStorage.setItem("Users", JSON.stringify(usersArr));
     localStorage.setItem("CurrentUser", JSON.stringify(currUser));
 
@@ -105,3 +109,8 @@ document
   .addEventListener("click", editPassword);
 document.getElementById("log-out").addEventListener("click", logout);
 document.getElementById("home").addEventListener("click", goHome);
+
+document.getElementById("cart").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.replace("../cart/index.html");
+});

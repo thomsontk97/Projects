@@ -81,3 +81,15 @@ function duplicateEmail(email) {
 //(a).Signup Event
 var btnSignup = document.getElementById("btn-signup");
 btnSignup.addEventListener("click", checkDetails);
+
+document.getElementById("log-in").onclick = () => {
+  window.location.replace("./login.html");
+};
+
+document.getElementById("home").onclick = () => {
+  window.location.replace("../index.html");
+};
+
+document.getElementById("cart").addEventListener("click", () => {
+  alert("User not logged in");
+});

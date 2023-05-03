@@ -5,9 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Cart</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="../shop/styles2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- NavBar -->
+    <div id="nav">
+      <div id="title">MeShop</div>
+      <div id="links">
+        <a id="home2" class="link-items" href="../shop/index.html">Home</a>
+        <!-- <div id="sign-up" class="link-items">Signup</div> -->
+        <a id="pro" class="link-items" href="../profile/profile.html"
+          >Profile</a
+        >
+        <div id="cart" class="link-items">My Cart</div>
+      </div>
+    </div>
+    <h1>My Cart</h1>
+    <div class="main">
+      <div id="items-list"></div>
+      <div id="price-list"></div>
+    </div>
+    <!-- script -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

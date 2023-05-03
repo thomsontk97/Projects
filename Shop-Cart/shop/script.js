@@ -10,6 +10,7 @@
 // };
 
 var products = [];
+var myCart = [];
 var url = "https://fakestoreapi.com/products";
 
 // fetch(url)
@@ -83,7 +84,7 @@ function showItems(products) {
                 <div class="rating">Rating: ${product.rating.rate}</div>
                 <div class="size size-${sizes[randomSize]}">${sizes[randomSize]}</div>
                 <div class="color color-${colors[randomColor]}" style='background-color:${colors[randomColor]}'> </div>
-                <button class="addToCart buttons">Add to Cart</button>
+                <button class="addToCart buttons" id="btn-${product.id}" onClick=addToCart(${product.id})>Add to Cart</button>
                 </div>
                   `;
   });
@@ -266,4 +267,20 @@ p100.addEventListener("change", () => {
   }
 });
 
-//size
+//Add to Cart
+function addToCart(num) {
+  var cartItem = {};
+  products.forEach((product) => {
+    if (product.id == num) {
+      cartItem = product;
+    }
+  });
+
+  console.log(cartItem);
+
+  myCart.push(cartItem);
+  console.log(myCart);
+
+  alert("Item Added to your cart");
+  localStorage.setItem("MyCart", JSON.stringify(myCart));
+}

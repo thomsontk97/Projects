@@ -23,3 +23,7 @@ document.getElementById("login").addEventListener("click", login);
 
 document.getElementById("log-in").addEventListener("click", login);
 document.getElementById("sign-up").addEventListener("click", goToProfile);
+
+document.getElementById("cart").addEventListener("click", () => {
+  alert("User not logged in");
+});

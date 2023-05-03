@@ -26,10 +26,11 @@ function verifyDetails(ev) {
 
   console.log(usersArr);
 
+  var verified = false;
+
   usersArr.forEach((user) => {
-    if (loginEmail != user.Email && loginPass != user.Password) {
-      // alert("Invalid Email and Password");
-    } else {
+    if (loginEmail === user.Email && loginPass === user.Password) {
+      verified = true;
       var token = randomToken();
 
       currentUser = {
@@ -45,9 +46,25 @@ function verifyDetails(ev) {
       window.location.replace("../shop/index.html");
     }
   });
+
+  if (!verified) {
+    alert("Invalid Login Credintials");
+  }
 }
 
 //-------------------------------------------------------------------------------------------------------
 //(b).Login Event
 var btnLogin = document.getElementById("btn-login");
 btnLogin.addEventListener("click", verifyDetails);
+
+document.getElementById("sign-up").addEventListener("click", () => {
+  window.location.replace("./signup.html");
+});
+
+document.getElementById("home").addEventListener("click", () => {
+  window.location.replace("../index.html");
+});
+
+document.getElementById("cart").addEventListener("click", () => {
+  alert("User not logged in");
+});

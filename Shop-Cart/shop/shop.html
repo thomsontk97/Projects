@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
+    <link rel="stylesheet" href="./shop.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../profile/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NavBar -->
+    <div id="nav">
+      <div id="title">MeShop</div>
+      <div id="links">
+        <div id="home" class="link-items">Home</div>
+        <!-- <div id="sign-up" class="link-items">Signup</div> -->
+        <div id="profile-pro" class="link-items">Proflie</div>
+        <div id="cart" class="link-items">My Cart</div>
+      </div>
+    </div>
+    <!-- Main -->
+    <div class="main-container">
+      <div class="left">
+        <!-- Colors -->
+        <div class="left-items">
+          <h3>Colors :</h3>
+          <ul>
+            <li>
+              <input id="red" type="checkbox" name="color" />
+              <label for="red" class="container">Red</label>
+            </li>
+            <li>
+              <input id="blue" type="checkbox" name="color" />
+              <label for="blue">Blue</label>
+            </li>
+            <li>
+              <input id="green" type="checkbox" name="color" />
+              <label for="green">Green</label>
+            </li>
+            <li>
+              <input id="black" type="checkbox" name="color" />
+              <label for="black">Black</label>
+            </li>
+            <li>
+              <input id="white" type="checkbox" name="color" />
+              <label for="white">White</label>
+            </li>
+          </ul>
+        </div>
+        <!-- Sizes -->
+        <div class="left-items" id="sizes">
+          <h3>Sizes</h3>
+          <ul>
+            <li>
+              <input id="s" type="checkbox" name="color" />
+              <label for="s">S</label>
+            </li>
+            <li>
+              <input id="m" type="checkbox" name="color" />
+              <label for="m">M</label>
+            </li>
+            <li>
+              <input id="l" type="checkbox" name="color" />
+              <label for="l">L</label>
+            </li>
+            <li>
+              <input id="xl" type="checkbox" name="color" />
+              <label for="xl">XL</label>
+            </li>
+          </ul>
+        </div>
+        <!-- Ratings -->
+        <div class="left-items" id="ratings">
+          <h3>Rating :</h3>
+          <input
+            type="range"
+            id="range"
+            min="0"
+            max="5"
+            value="0"
+            list="values"
+          />
+          <datalist id="values">
+            <option value="0" label="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5" label="5"></option>
+          </datalist>
+        </div>
+      </div>
+      <div class="right"></div>
+    </div>
+    <!-- Script -->
+    <script src="./script.js"></script>
+  </body>
+</html>

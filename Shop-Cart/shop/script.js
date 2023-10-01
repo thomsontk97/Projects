@@ -17,7 +17,7 @@ var url = "https://fakestoreapi.com/products";
 document.getElementById("theme").addEventListener("click",()=>{
  if( document.body.style.backgroundColor = "black"){
     document.body.style.backgroundColor = "white";
- }else{
+ }else if( document.body.style.backgroundColor = "white";){
     document.body.style.backgroundColor = "black";
  }
 })

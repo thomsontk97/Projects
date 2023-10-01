@@ -13,6 +13,10 @@ var products = [];
 var myCart = [];
 var url = "https://fakestoreapi.com/products";
 
+
+document.getElementById("theme").addEventListener("click",()=>{
+  document.body.style.backgroundColor = "black";
+})
 // fetch(url)
 //   .then((res) => res.json())
 //   .then((data) => {
